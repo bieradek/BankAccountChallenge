@@ -9,6 +9,7 @@ public class bankAccount {
     private int phoneNumber;
 
     public bankAccount() {
+        this("0000 0000 0000 0000", 0, "Unknown Name", "unknown.email@address.com", 123);
         System.out.println("Empty constructor called");
     }
 
