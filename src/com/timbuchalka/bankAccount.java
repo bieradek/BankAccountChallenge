@@ -12,7 +12,9 @@ public class bankAccount {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) { this.accountNumber = accountNumber; }
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     public long getBalance() {
         return balance;
@@ -46,15 +48,17 @@ public class bankAccount {
         this.phoneNumber = phoneNumber;
     }
 
-    public void depositFunds(int funds) {
-        this.balance = balance + funds;
+    public void depositFunds(int depositAmount) {
+        this.balance += depositAmount;
+        System.out.println("Deposit of " + depositAmount + " made. Current balance = " + this.balance);
     }
 
-    public void withdrawFunds(int funds) {
-        if (balance < funds) {
-            System.out.println("Insufficient funds");
+    public void withdrawFunds(int withdrawalAmount) {
+        if (this.balance <= withdrawalAmount) {
+            System.out.println("Insufficient funds. Only " + this.balance + " funds available. Withdrawal not processed");
         } else {
-            this.balance = balance - funds;
+            this.balance -= withdrawalAmount;
+            System.out.println("Withdrawal of " + withdrawalAmount + " amount successful. Remaining amount: " + this.balance);
         }
     }
 }
