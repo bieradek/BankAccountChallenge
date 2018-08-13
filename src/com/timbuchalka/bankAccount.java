@@ -15,11 +15,16 @@ public class bankAccount {
 
     public bankAccount(String accountNumber, long balance, String customerName, String emailAddress, int phoneNumber) {
         System.out.println("Account constructor with parameters called");
-        this.accountNumber = accountNumber;
+        //this.accountNumber = accountNumber; << this approach is better because it guarantees that line will be executed
+        setAccountNumber(accountNumber);
         this.balance = balance;
         this.customerName = customerName;
         this.emailAddress = emailAddress;
         this.phoneNumber = phoneNumber;
+    }
+
+    public bankAccount(String customerName, String emailAddress, int phoneNumber) {
+        this("DEFAULT ACCOUTN NUMBER", 500000, customerName, emailAddress, phoneNumber);
     }
 
     public String getAccountNumber() {
